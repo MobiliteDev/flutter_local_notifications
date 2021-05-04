@@ -1180,12 +1180,12 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
     }
 
     private Boolean sendNotificationPayloadMessage(Intent intent) {
-        if (SELECT_NOTIFICATION.equals(intent.getAction())) {
-            String payload = intent.getStringExtra(PAYLOAD);
-            channel.invokeMethod("selectNotification", payload);
-            return true;
-        }
-        return false;
+        //if (SELECT_NOTIFICATION.equals(intent.getAction())) {
+        String payload = intent.getStringExtra(PAYLOAD);
+        channel.invokeMethod("selectNotification", payload);
+        return true;
+        //}
+        //return false;
     }
 
     private void createNotificationChannelGroup(MethodCall call, Result result) {

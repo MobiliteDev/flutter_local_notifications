@@ -722,7 +722,7 @@ static FlutterError *getFlutterError(NSError *error) {
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler NS_AVAILABLE_IOS(10.0) {
-    if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier] && [self isAFlutterLocalNotification:response.notification.request.content.userInfo]) {
+    if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
         NSString *payload = (NSString *) response.notification.request.content.userInfo[PAYLOAD];
         if(_initialized) {
             [self handleSelectNotification:payload];

@@ -1,3 +1,5 @@
+# [5.0.1 - 04/05/2021]
+Migration null safety
 # [5.0.0+4]
 
 * Fixed example app to re-add attributes to the Android app's `AndroidManifest.xml` to allow full-screen intent notifications to work
